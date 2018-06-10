@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 
+ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+	<persistence-unit name="Admin_PU" transaction-type="JTA">
+    	<jta-data-source>jdbc/StageMySql</jta-data-source>
+    	<class>com.stage.beans.Administrateur</class>		
+	</persistence-unit>
+	
+	<persistence-unit name="Chef_PU" transaction-type="JTA">
+    	<jta-data-source>jdbc/StageMySql</jta-data-source>
+    	<class>com.stage.beans.ChefProjet</class>		
+	</persistence-unit>
+	
+	<persistence-unit name="Personnel_PU" transaction-type="JTA">
+    	<jta-data-source>jdbc/StageMySql</jta-data-source>
+    	<class>com.stage.beans.Personnel</class>		
+	</persistence-unit>
+	
+	<persistence-unit name="Projet_PU" transaction-type="JTA">
+    	<jta-data-source>jdbc/StageMySql</jta-data-source>
+    	<class>com.stage.beans.Projet</class>		
+	</persistence-unit>
+	
+	<persistence-unit name="Tache_PU" transaction-type="JTA">
+    	<jta-data-source>jdbc/StageMySql</jta-data-source>
+    	<class>com.stage.beans.Tache</class>		
+	</persistence-unit>
+	
+</persistence>

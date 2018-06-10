@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+      
+    <h:head>
+   		<meta charset="utf-8" />
+        <title>login</title>
+        <h:outputStylesheet library="default" name="css/form.css"  />
+    </h:head>
+    <h:body>
+        <h:form id="loginForm">          
+        	<fieldset>
+         	<legend>Login Personnel</legend> 
+         	
+         	<h:outputLabel for="nom">Nom <span class="requis">*</span></h:outputLabel>
+	        <h:inputText id="nom" value="#{loginPersonnel.nom}"  size="20" maxlength="20" >
+	            <f:ajax event="blur" render="nomMessage" />
+	        </h:inputText>
+	        <h:message id="nomMessage" for="nom" errorClass="erreur" />
+	        <br />  
+ 
+            <h:outputLabel for="motdepasse">Mot de passe <span class="requis">*</span></h:outputLabel>
+	        <h:inputSecret id="motdepasse" value="#{loginPersonnel.mot_de_passe}"  size="20" maxlength="20">
+            	<f:ajax event="blur"  render="motDePasseMessage confirmationMessage" />
+            </h:inputSecret>
+	        <h:message id="motDePasseMessage" for="motdepasse" errorClass="erreur" />
+	        <br />
+ 
+            <h:messages globalOnly="true" infoClass="info" /> 
+ 
+                   
+ 			<h:commandButton value="Login" action="#{loginPersonnel.loginProject}" styleClass="sansLabel">
+	            <f:ajax execute="@form" render="@form" />
+	        </h:commandButton>
+                   
+ 
+        	</fieldset>
+ 			<ui:include src="/public/menu.xhtml" /> 
+        </h:form>
+ 
+    </h:body> 
+ 
+</html>

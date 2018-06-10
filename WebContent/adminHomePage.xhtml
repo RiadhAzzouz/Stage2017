@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+    	<meta charset="utf-8" />
+        <title>Home Page Administrateur</title>
+        <h:outputStylesheet library="default" name="css/form.css"  />
+    </h:head>
+    <h:body>
+        <ui:include src="/listerAdministrateur.xhtml" />
+        <ui:include src="/listerChefProjet.xhtml" />
+        <ui:include src="/listerPersonnel.xhtml" />
+        <ui:include src="/listerProjet.xhtml" />
+        <h:link value="Ajouter Projet" outcome = "/ajouterProjet.xhtml"/>
+        <h:form>
+	        <h:commandButton value="Log out" action="#{loginAdmin.logout}">
+	        	<f:ajax execute="@form" render="@form" />
+	        </h:commandButton>
+	        <ui:include src="/public/menu.xhtml" /> 
+        </h:form>
+    </h:body>
+</html>

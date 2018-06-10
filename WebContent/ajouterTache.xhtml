@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"> 
+    <h:head>
+        <meta charset="utf-8" />
+        <title>Ajouter Tache</title>
+        <h:outputStylesheet library="default" name="css/form.css"  />
+    </h:head>
+    <h:body>
+      <h:form id="formulaire">
+         <fieldset>
+         	<legend>Details du Tache</legend>
+	     	
+	     	
+	     	<h:outputLabel for="nom">Nom <span class="requis">*</span></h:outputLabel>
+	        <h:inputText id="nom" value="#{AjouterTache.tache.nom}"  size="20" maxlength="20" >
+	            <f:ajax event="blur" render="nomMessage" />
+	            <f:validator  binding="#{existenceTacheValidator}" />
+	        </h:inputText>
+	        <h:message id="nomMessage" for="nom" errorClass="erreur" />
+	        <br />
+	        
+	        <h:outputLabel for="id_projet">Identité du Projet <span class="requis">*</span></h:outputLabel>
+	        <h:inputText id="id_projet" value="#{AjouterTache.tache.id_projet}"  size="20" maxlength="20" >
+	            <f:ajax event="blur" render="id_projetMessage" />
+	            <f:validator  binding="#{existenceIDProjetValidator}" />
+	        </h:inputText>
+	        <h:message id="id_projetMessage" for="id_projet" errorClass="erreur" />
+	        <br />
+	        
+	        <h:outputLabel for="id_personnel">Identité du Personnel <span class="requis">*</span></h:outputLabel>
+	        <h:inputText id="id_personnel" value="#{AjouterTache.tache.id_personnel}"  size="20" maxlength="20" >
+	            <f:ajax event="blur" render="id_personnelMessage" />
+	            <f:validator  binding="#{existenceIDPersonnelValidator}" />
+	        </h:inputText>
+	        <h:message id="id_personnelMessage" for="id_personnel" errorClass="erreur" />
+	        <br />
+
+	        <h:messages globalOnly="true" infoClass="info" />
+	
+	        <h:commandButton value="Ajouter" action="#{AjouterTache.inscrire}" styleClass="sansLabel">
+	            <f:ajax execute="@form" render="@form" />
+	        </h:commandButton>
+	        <br />
+          </fieldset>
+          <h:link value="Retour" outcome="/chefHomePage"/>
+        </h:form> 	
+    </h:body>
+</html>

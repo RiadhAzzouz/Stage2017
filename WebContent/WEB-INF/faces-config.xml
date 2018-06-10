@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.0"
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+    <navigation-rule>
+        <from-view-id>/public/loginAdmin.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>adminHomePage</from-outcome>
+            <to-view-id>/adminHomePage.xhtml</to-view-id>
+            <redirect>     
+       		</redirect>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/adminHomePage.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>loginAdmin</from-outcome>
+            <to-view-id>/public/loginAdmin.xhtml</to-view-id>
+            <redirect>     
+       		</redirect>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/public/inscriptionAdmin.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>loginAdmin</from-outcome>
+            <to-view-id>/public/loginAdmin.xhtml</to-view-id>
+            <redirect>     
+       		</redirect>
+        </navigation-case>
+    </navigation-rule>
+    
+    
+    
+    <navigation-rule>
+        <from-view-id>/adminHomePage.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>adminHomePage</from-outcome>
+            <to-view-id>/adminHomePage.xhtml</to-view-id>
+            <redirect>     
+       		</redirect>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/public/loginChef.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>chefHomePage</from-outcome>
+            <to-view-id>/chefHomePage.xhtml</to-view-id>
+            <redirect>     
+       		</redirect>
+        </navigation-case>
+    </navigation-rule>
+    
+  
+    
+    <navigation-rule>
+        <from-view-id>/public/inscriptionChef.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>loginChef</from-outcome>
+            <to-view-id>/public/loginChef.xhtml</to-view-id>
+            <redirect>     
+       		</redirect>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/chefHomePage.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>loginChef</from-outcome>
+            <to-view-id>/public/loginChef.xhtml</to-view-id>
+            <redirect>     
+       		</redirect>
+        </navigation-case>
+    </navigation-rule>
+    
+      <navigation-rule>
+        <from-view-id>/chefHomePage.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>chefHomePage</from-outcome>
+            <to-view-id>/chefHomePage.xhtml</to-view-id>
+            <redirect>     
+       		</redirect>
+        </navigation-case>
+    </navigation-rule>
+    
+    
+    <navigation-rule>
+        <from-view-id>/public/inscriptionPersonnel.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>loginPersonnel</from-outcome>
+            <to-view-id>/public/loginPersonnel.xhtml</to-view-id>
+            <redirect>     
+       		</redirect>
+        </navigation-case>
+    </navigation-rule>
+   
+    
+    
+     <navigation-rule>
+        <from-view-id>/public/loginPersonnel.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>personnelHomePage</from-outcome>
+            <to-view-id>/personnelHomePage.xhtml</to-view-id>
+            <redirect>     
+       		</redirect>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/personnelHomePage.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>loginPersonnel</from-outcome>
+            <to-view-id>/public/loginPersonnel.xhtml</to-view-id>
+            <redirect>     
+       		</redirect>
+        </navigation-case>
+    </navigation-rule>
+    
+    
+    
+     <navigation-rule>
+        <from-view-id>/personnelHomePage.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>personnelHomePage</from-outcome>
+            <to-view-id>/personnelHomePage.xhtml</to-view-id>
+            <redirect>     
+       		</redirect>
+        </navigation-case>
+    </navigation-rule>
+    
+    
+    
+     
+    
+    
+</faces-config>

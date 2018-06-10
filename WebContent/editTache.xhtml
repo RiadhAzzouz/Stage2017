@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+    	<meta charset="utf-8" />
+        <title>Edit Tache</title>
+        <h:outputStylesheet library="default" name="css/form.css"  />
+    </h:head>
+    <h:body>
+          <h:form>
+    	<fieldset>
+    		<legend>Mettre à jour les Taches</legend>
+    		
+    		
+       		<h:outputLabel for="pourcentage">Pourcentage <span class="requis">*</span></h:outputLabel>
+	        <h:inputText id="pourcentage" value="#{AjouterTache.tache.pourcentage}"  >
+	        </h:inputText>
+	        
+	        <br />
+        	
+        	<h:commandButton value="Mettre à jour" action="#{AjouterTache.Update}">
+        	</h:commandButton>
+        	
+        </fieldset>
+        
+    </h:form>
+        
+    </h:body>
+</html>

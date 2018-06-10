@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"> 
+    <h:head>
+        <meta charset="utf-8" />
+        <title>Ajouter Projet</title>
+        <h:outputStylesheet library="default" name="css/form.css"  />
+    </h:head>
+    <h:body>
+      <h:form id="formulaire">
+         <fieldset>
+         	<legend>Details du Projet</legend>
+	     	
+	     	
+	     	<h:outputLabel for="nom">Nom <span class="requis">*</span></h:outputLabel>
+	        <h:inputText id="nom" value="#{AjouterProjet.projet.nom}"  size="20" maxlength="20" >
+	            <f:ajax event="blur" render="nomMessage" />
+	            <f:validator  binding="#{existenceProjetValidator}" />
+	        </h:inputText>
+	        <h:message id="nomMessage" for="nom" errorClass="erreur" />
+	        <br />
+	        
+	        <h:outputLabel for="id_chef">Identité du Chef <span class="requis">*</span></h:outputLabel>
+	        <h:inputText id="id_chef" value="#{AjouterProjet.projet.id_chef}"  size="20" maxlength="20" >
+	            <f:ajax event="blur" render="id_chefMessage" />
+	            <f:validator  binding="#{existenceIDChefValidator}" />
+	        </h:inputText>
+	        <h:message id="id_chefMessage" for="id_chef" errorClass="erreur" />
+	        <br />
+
+	        <h:messages globalOnly="true" infoClass="info" />
+	
+	        <h:commandButton value="Ajouter" action="#{AjouterProjet.inscrire}" styleClass="sansLabel">
+	            <f:ajax execute="@form" render="@form" />
+	        </h:commandButton>
+	        <br />
+          </fieldset>
+          <h:link value="Retour" outcome="/adminHomePage"/>
+        </h:form> 	
+    </h:body>
+</html>

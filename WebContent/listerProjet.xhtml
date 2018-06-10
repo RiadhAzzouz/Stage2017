@@ -1,0 +1,52 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    
+    <h:form>
+    	<fieldset>
+       		<legend>Lister les Projets</legend>	 
+	        <h:dataTable value = "#{AjouterProjet.getProjets()}" var = "pro">
+	        <h:column>
+	        	<f:facet name="header">ID</f:facet>
+	        	<h:outputText value="#{pro.id}" ></h:outputText>
+	        </h:column>
+	        <h:column>
+	        	<f:facet name="header">Nom</f:facet>
+	        	<h:outputText value="#{pro.nom}" ></h:outputText>
+	        </h:column>
+	        <h:column>
+	        	<f:facet name="header">Chef</f:facet>
+	        	<h:outputText value="#{pro.id_chef}" ></h:outputText>
+	        </h:column>
+	        <h:column>
+	        	<f:facet name="header">Pourcentage</f:facet>
+	        	<h:outputText value="#{pro.pourcentage}" ></h:outputText>
+	        </h:column>
+	        <h:column>
+	        	<f:facet name="header">Date de l'Ajout</f:facet>
+	        	<h:outputText value="#{pro.dateAjout}" >
+	        		<f:convertDateTime pattern="yyyy/mm/dd" ></f:convertDateTime>
+	        	</h:outputText>
+	        </h:column>
+	        <h:column>
+	        	<f:facet name="header">Action</f:facet>
+	        	<h:commandButton value="delete" action="#{AjouterProjet.delete(pro.nom)}" >
+		            <f:ajax execute="@form" render="@form" />
+		        </h:commandButton>
+		        
+	        </h:column>
+	        </h:dataTable>
+        
+        </fieldset>
+        
+    </h:form>
+    
+</ui:composition>
+
+
+
+
+
+

@@ -1,0 +1,53 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    
+    <h:form>
+    	<fieldset>
+    		<legend>Liste des Taches</legend>
+       		<h:dataTable value = "#{AjouterTache.getTaches()}" var = "tac">
+       		<h:column>
+        		<f:facet name="header">ID</f:facet>
+        		<h:outputText value="#{tac.id}" ></h:outputText>
+        	</h:column>
+	        <h:column>
+	        	<f:facet name="header">Nom</f:facet>
+	        	<h:outputText value="#{tac.nom}" ></h:outputText>
+	        </h:column>
+	        <h:column>
+	        	<f:facet name="header">Projet</f:facet>
+	        	<h:outputText value="#{tac.id_projet}" ></h:outputText>
+	        </h:column>
+	        <h:column>
+	        	<f:facet name="header">Personnel</f:facet>
+	        	<h:outputText value="#{tac.id_personnel}" ></h:outputText>
+	        </h:column>
+	        <h:column>
+	        	<f:facet name="header">Pourcentage</f:facet>
+	        	<h:outputText value="#{tac.pourcentage}" ></h:outputText>
+	        </h:column>
+	        <h:column>
+	        	<f:facet name="header">Date de l'Ajout</f:facet>
+	        	<h:outputText value="#{tac.dateAjout}" >
+	        		<f:convertDateTime pattern="yyyy/mm/dd" ></f:convertDateTime>
+	        	</h:outputText>
+	        </h:column>
+	        <h:column>
+	        	<f:facet name="header">Action</f:facet>
+	        	<h:commandButton value="delete" action="#{AjouterTache.delete(tac.nom)}" >
+		            <f:ajax execute="@form" render="@form" />
+		        </h:commandButton>
+		        
+	        </h:column>
+	        </h:dataTable>
+        
+        </fieldset>
+        
+    </h:form>
+    
+</ui:composition>
+
+
+

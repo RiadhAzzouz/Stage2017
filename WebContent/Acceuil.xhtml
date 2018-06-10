@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
+    <h:head>
+    	<meta charset="utf-8" />
+        <title>Page d'Acceuil</title>
+        <h:outputStylesheet library="default" name="css/form.css"  />
+        
+        
+        
+    </h:head>
+    <h:body>
+    	
+    	<h:form>
+    	<legend>Page d'Acceuil</legend>
+    	<br />
+    	<fieldset>
+        <legend>Se connecter</legend>
+        <br />
+        <h:link value="Page de connexion Administrateur" outcome="/public/loginAdmin" />
+        <br />
+        <h:link value="Page de connexion Chef" outcome="/public/loginChef" />
+        <br />
+        <h:link value="Page de connexion Personnel" outcome="/public/loginPersonnel" />
+        <br /> 
+        </fieldset>
+        <br />
+        <fieldset>
+        <legend>Inscription</legend>
+        <br />
+        <h:link value="Page d'inscription Administrateur" outcome="/public/inscriptionAdmin" />
+        <br />
+        <h:link value="Page d'inscription Chef" outcome="/public/inscriptionChef" />
+        <br />
+        <h:link value="Page d'inscription Personnel" outcome="/public/inscriptionPersonnel" />
+        <br />
+        
+        </fieldset>
+        </h:form>
+    </h:body>
+</html>
